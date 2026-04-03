@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>love Music Experience  for my love</title>
+<p>love  You my everything and my love only you miss Nancy love you forever </p>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#1e3c72,#2a5298,#ff512f,#dd2476);
+    background-size:400% 400%;
+    animation:gradientBG 10s ease infinite;
+    overflow:hidden;
+    color:white;
+    text-align:center;
+}
+
+@keyframes gradientBG{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+.container{
+    backdrop-filter: blur(20px);
+    background: rgba(255,255,255,0.1);
+    padding:50px;
+    border-radius:20px;
+    box-shadow:0 0 40px rgba(0,0,0,0.3);
+    animation:fadeIn 2s ease-in-out;
+}
+
+h1{
+    font-size:40px;
+    margin-bottom:20px;
+    animation:float 3s ease-in-out infinite;
+}
+
+p{
+    margin-bottom:30px;
+    font-size:18px;
+    opacity:0.9;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    background:linear-gradient(45deg,#ff416c,#ff4b2b);
+    color:white;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+.music-btn{
+    position:fixed;
+    bottom:30px;
+    right:30px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    border:none;
+    background:linear-gradient(45deg,#00c6ff,#0072ff);
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 0 20px rgba(0,0,0,0.4);
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+@media(max-width:600px){
+    h1{font-size:28px;}
+    .container{padding:30px;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Welcome To My Personal love Nancy you are only my property ✨</h1>
+    <p>Feel the vibe. Enjoy the experience ad my love.</p>
+    <button onclick="playMusic()">Start Experience</button>
+</div>
+
+<button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+<audio id="bg-music" loop>
+    <source src="tu agar mere a a hawaye mere.mpeg.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+var music = document.getElementById("bg-music");
+
+function playMusic(){
+    music.play();
+}
+
+function toggleMusic(){
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+}
+</script>
+
+</body>
+</html>
